@@ -16,5 +16,23 @@ router.post("/books", (req, res, next) => {
     .catch(next);
 });
 
+// put request route for editing existing books
+router.put("/books/:id", (req, res, next) => {
+  const id = { _id: req.params.id };
+
+  Book.findByIdAndUpdate(id, req.body)
+    .then(() => {
+      Book.findOne(id).then(book => res.status(200).send(book));
+    })
+    .catch(next);
+});
+
+// delete request route for removing books from database
+router.delete("/books/:id", (req, res, next) => {
+  Book.findByIdAndRemove({ _id: req.params.id })
+    .then(book => res.status(200).send("deleted book with id " + book._id))
+    .catch(next);
+});
+
 // exporting router
 module.exports = router;
