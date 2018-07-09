@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "book collection",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,7 +12,7 @@
     "url": "git+https://github.com/Vaibhav-Yadav-1998/book-collection.git"
   },
   "author": "Vaibhav Yadav",
-  "license": "ISC",
+  "license": "UNLICENSED",
   "bugs": {
     "url": "https://github.com/Vaibhav-Yadav-1998/book-collection/issues"
   },
